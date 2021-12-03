@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">start131-foto</string>
+    <string name="activity">Activity Launcher</string>
+    <string name="denied_toast">Запрещено</string>
+    <string name="something_wrong">Что-то пошло не так</string>
+    <string name="need_permission">Нужны разрешения</string>
+</resources>
