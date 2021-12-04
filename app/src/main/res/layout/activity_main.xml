@@ -10,7 +10,9 @@
         android:id="@+id/imageContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
         android:contentDescription="@string/show_foto"/>
 
     <ImageView
