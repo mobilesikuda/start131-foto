@@ -3,12 +3,8 @@ package ru.sikuda.mobile.start131_foto
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.view.isVisible
 import ru.sikuda.mobile.start131_foto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -29,12 +25,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 cameraPermission.launch(Manifest.permission.CAMERA)
             }
         }
-
-        binding.closeButton.setOnClickListener {
-            setImageIsVisible(false)
-        }
     }
-
 
     private val cameraPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         when {
@@ -56,24 +47,16 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         if (bitmap != null) {
 
             binding.imageContainer.setImageBitmap(bitmap)
-            setImageIsVisible(true)
+            //setImageIsVisible(true)
         } else {
             // something was wrong
             showToast(R.string.something_wrong)
         }
     }
 
-
-
     private fun showSettingsDialog() {
         //DontAskAgainFragment().show(parentFragmentManager, DontAskAgainFragment.TAG)
         showToast(R.string.denied_toast)
-    }
-
-    private fun setImageIsVisible(isVisible: Boolean) {
-        binding.cameraButton.isVisible = !isVisible
-        binding.closeButton.isVisible = isVisible
-        binding.imageContainer.isVisible = isVisible
     }
 
     private fun showToast(textId: Int) {

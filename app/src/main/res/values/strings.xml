@@ -4,4 +4,6 @@
     <string name="denied_toast">Запрещено</string>
     <string name="something_wrong">Что-то пошло не так</string>
     <string name="need_permission">Нужны разрешения</string>
+    <string name="make_foto">make foto</string>
+    <string name="show_foto">show foto</string>
 </resources>
